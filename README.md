@@ -134,6 +134,15 @@ Note also that the notebook seeds NumPy (`np.random.seed(1234)`) but never seeds
 PyTorch, so weight initialisation, shuffling, and augmentation vary between runs.
 Expect the numbers to move by a fraction of a point even on identical data.
 
+**One cell has no stored output.** The class-average cell carried a bug: its
+counts list sat at module scope and was never reset between calls, so the second
+call appended to the first and reported the average over train *and* validation
+combined (27.02) instead of validation's own (3.92). The bug is fixed, but the
+stored output was produced by the old code, and filling in a corrected number by
+hand would present output the cell never actually printed — so it was cleared.
+Re-run that cell against the data to repopulate it. The correct values are in the
+table above, and both are plain arithmetic: 34,225 / 683 and 2,679 / 683.
+
 ---
 
 ## 🧰 Tech Stack
