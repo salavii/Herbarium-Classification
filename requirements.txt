@@ -1,0 +1,17 @@
+# Written by hand from what Herbarium.ipynb actually calls, not auto-generated.
+#
+# The notebook previously also imported tensorflow, keras, cv2, PIL, glob and
+# shutil without ever using them; a requirements file generated from the import
+# list would have pulled TensorFlow into what is entirely a PyTorch project.
+# Those imports have been removed.
+#
+# Versions are intentionally unpinned: the notebook was run on Google Colab
+# (Python 3.10) and the exact versions from that session were not recorded, so
+# any pin here would be a guess. Recent releases of these packages run it.
+
+torch
+torchvision
+scikit-learn
+numpy
+matplotlib
+tqdm
